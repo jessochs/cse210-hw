@@ -1,0 +1,29 @@
+Design outline for a Journal App 
+
+Journal:
+-will show a menu of options- 
+-displays user entries from list
+-saves entries to a file
+-loads entries from a file
+
+Attributes:
+display()
+saveList()
+loadList()
+
+Entry:
+-asks user for the date
+-displays a prompt
+-user is able to input a response to the prompt
+
+Attributes:
+string date
+displayPrompt()
+
+Prompts:
+-includes a list of five or so Prompts
+-can randomize list of Prompts
+
+Attributes:
+promptList []
+random.promptList()
