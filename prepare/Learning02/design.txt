@@ -7,6 +7,9 @@ Journal:
 -loads entries from a file
 
 Attributes:
+_entry List<Entry>
+
+Behaviors:
 display()
 saveList()
 loadList()
@@ -17,13 +20,20 @@ Entry:
 -user is able to input a response to the prompt
 
 Attributes:
-string date
-displayPrompt()
+_date: string
+_prompt: string
+_response: string
+
+Behaviors:
+display()
 
 Prompts:
 -includes a list of five or so Prompts
 -can randomize list of Prompts
 
 Attributes:
-promptList []
+_promptList []
+
+Behaviors:
 random.promptList()
+display()
