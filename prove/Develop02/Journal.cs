@@ -1,32 +1,45 @@
+using System.IO;
+using System;
+
 public class Journal
 {
-    //private List<Entry> entries = new List<Entry>();
+    private List<Entry> entries = new List<Entry>();
     //private List<Prompt> prompts = new List<Prompt>();
     Prompt prompt = new Prompt();
-    Entry entries = new Entry();
+    //Entry entries = new Entry();
 
     //private FileHandling io = new FileHandling();
     string fileName = "journal.txt";
 
     public void addEntry() {
-        Console.WriteLine($"Your prompt is {prompt.getPrompt()}");
-        Console.Write("");
-        string newEntry = Console.ReadLine();
-        File.AppendAllText(fileName, $"{newEntry}");
+        Entry entry = new Entry();
+        entry._prompt = Console.Write($"Your prompt is {prompt.getPrompt()}");
+        entry._response = "";
+        //entry._theCurrentTime = DateTime.Now();
+        this.entries.Add(entry);
+
+
+
+        // Console.WriteLine($"Your prompt is {prompt.getPrompt()}");
+        // Console.Write("");
+        // string newEntry = Console.ReadLine();
+        // File.AppendText()
 
         
         
     }
 
     public void DisplayEntries() {
-        Console.WriteLine($"Show all entries:{entries._response}");
+        foreach (Entry entry in entries) {
+            entry.Display();
+        }
     }
     // METHODS
 
     // AddEntry()
 
     // DisplayEntries()
-    public void Save(List<Entry> entries)
+    public void Save()
     {
         //io.Save(entries);
         Console.Write("What is the name of your journal file?");

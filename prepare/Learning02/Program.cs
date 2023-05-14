@@ -4,47 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-        // Journal journal = new Journal();
-        // //journal.Save();
-        // while (true)
-        // {
-        //     Console.WriteLine("Welcome to your journal");
-        //     // Finish building the menu
-        //     // Capture input
-        //     // Set up a Switch and Case to 
-        //     // Each case will execute a menu option
-        //     //      jounral.*method to execute*()
-
-        // }
-        // // List<> entries = journal.GetEntries()
-        // // io.Save(entries)
-
-        // int option = 0;
-
-        // switch(option)
-        // {
-        //     case 1:
-        //     writePrompt();
-        //     break;
-
-        //     case 2:
-        //     displayPrompt();
-        //     break;
-
-        //     case 3:
-        //     journal.Save(entries);
-        //     break;
-
-        //     case 4:
-        //     journal.Load();
-        //     break;
-
-        //     case 5:
-        //     //quit
-        //     break; 
-
-        // }
 
         // Job job1 = new Job();
         // job1._jobTitle = "Software Engineer";

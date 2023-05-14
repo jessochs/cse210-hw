@@ -7,8 +7,8 @@ class Program
     {
         Journal journal = new Journal();
         
-        bool choice = true;
-        while (choice) {
+        bool choice = false;
+        while (!choice) {
             //display menu
             Console.WriteLine("Enter a number");
             //get user input
@@ -24,13 +24,13 @@ class Program
                 journal.DisplayEntries();
                 break;
                 case "3":
-                //journal.Save(List<Entry> entries);
+                journal.Save();
                 break;
                 case "4":
                 journal.Load();
                 break;
-                //case "5":
-                //quit
+                case "5":
+                return;
 
                 
             }
