@@ -15,4 +15,7 @@ public class Prompt
 
         return _writingPrompt[rnd.Next(_writingPrompt.Count)];
     }
-}
+    
+    
+
+}   
