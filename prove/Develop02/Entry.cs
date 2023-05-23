@@ -2,8 +2,9 @@ using System;
 
 public class Entry 
 {
+    // DateTime _theCurrentTime = DateTime.Now;
     public string _date = "";
-    DateTime _theCurrentTime = DateTime.Now;
+    
     public string dateText;
     public string _prompt = "";
     public string _response = "";
@@ -23,7 +24,7 @@ public class Entry
     //  Get response
     public void Display()
     {
-        Console.WriteLine($"{_theCurrentTime} {_prompt} {_response}");
+        Console.WriteLine($"{_date} {_prompt} {_response}");
     }
 
 }

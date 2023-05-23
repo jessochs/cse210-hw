@@ -9,21 +9,18 @@ public class Journal
     //Entry entries = new Entry();
 
     //private FileHandling io = new FileHandling();
-    string fileName = "journal.txt";
+    
 
     public void addEntry() {
         Entry entry = new Entry();
-        entry._prompt = Console.Write($"Your prompt is {prompt.getPrompt()}");
-        entry._response = "";
-        //entry._theCurrentTime = DateTime.Now();
+        entry._prompt = prompt.getPrompt();
+        Console.WriteLine(entry._prompt);
+        entry._response = Console.ReadLine();
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        entry._date = dateText;
+        // entry._date = DateTime.Now;
         this.entries.Add(entry);
-
-
-
-        // Console.WriteLine($"Your prompt is {prompt.getPrompt()}");
-        // Console.Write("");
-        // string newEntry = Console.ReadLine();
-        // File.AppendText()
 
         
         
@@ -43,7 +40,7 @@ public class Journal
     {
         //io.Save(entries);
         Console.Write("What is the name of your journal file?");
-        Console.ReadLine();
+        string fileName = Console.ReadLine();
         
     {
         using (StreamWriter outputFile = new StreamWriter(fileName, true))
@@ -57,9 +54,11 @@ public class Journal
    
     // Load()
         // io.Load()
-    public List<Entry> Load()
-    {
-        List<Entry> entries = new List<Entry>();
+    public void Load()
+    {   
+        entries.Clear();
+        Console.Write("What is the filename?");
+        string fileName = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(fileName);
         foreach (string line in lines)
         {
@@ -67,6 +66,6 @@ public class Journal
             Entry entry = new Entry(data[0], data[1], data[2]);
             entries.Add(entry);
         }
-        return entries;
+        Console.WriteLine("Entries are loaded.");
     }
 }
