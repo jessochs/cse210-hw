@@ -2,19 +2,20 @@ using System;
 
 public class Reference 
 {
-    private string _book = "";
-    private int _chapter;
-    private int _verse;
-    private int _endVerse;
+    private string _book;
+    private string _chapter;
+    private string _verse;
+    private string _endVerse;
 
-    public Reference(string book, int chapter, int verse) {
+    public Reference(string book, string chapter, string verse) {
         
         _book = book;
         _chapter = chapter;
         _verse = verse;
+        _endVerse = null;
     }
 
-    public Reference(string book, int chapter, int verse, int endVerse) {
+    public Reference(string book, string chapter, string verse, string endVerse) {
         _book = book;
         _chapter = chapter;
         _verse = verse;
@@ -23,7 +24,17 @@ public class Reference
 
     public string GetReference()
     {
-        string place = $"{_book} {_chapter}:{_verse}";
+        string place;
+        if (_endVerse == null)
+        {
+            place = $"{_book} {_chapter}:{_verse}";
+        }
+        else
+        {
+            place = $"{_book} {_chapter}:{_verse} - {_endVerse}";
+        }
+            
+
         return place;
     }
 }   
