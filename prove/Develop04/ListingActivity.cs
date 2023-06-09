@@ -29,20 +29,27 @@ public class ListingActivity : Activity
     public void DisplayListingActivity()
     {
         DisplayStartMessage();
-        GetQuestion();
+        Console.WriteLine(GetQuestion());
 
         //display count of listed items
 
+        string input;
+        int counter = 0;
+        Console.WriteLine("You may begin in:");
+            Timer(5);
+
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(5);
+        DateTime endTime = startTime.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine("You may begin in:");
-            Timer(5);
+            
+            input = Console.ReadLine();
+
+            counter++;
 
         }
-
+        Console.WriteLine($"{counter}");
         DisplayEndMessage();
 
 

@@ -12,7 +12,7 @@ public class ReflectionActivity : Activity
     };
     private List<string> _questions = new List<string>
     {
-        "Why was this experience so measningful to you?",
+        "Why was this experience so meaningful to you?",
         "What was your favorite thing about this experience?",
         "What did you learn?",
         "Would you ever do someting like this again in the future?",
@@ -44,14 +44,16 @@ public class ReflectionActivity : Activity
     {
         DisplayStartMessage();
         Console.WriteLine("");
-        GetPrompt();
+        Console.WriteLine(GetPrompt());
         Console.WriteLine("Press enter to continue.");
+        string input = Console.ReadLine();
         int duration = _duration;
 
         while (duration > 0)
         {
-            GetQuestion();
-             Spinner();
+            Console.WriteLine(GetQuestion());
+            Spinner();
+            duration-=5;
         }
 
         Console.WriteLine("");

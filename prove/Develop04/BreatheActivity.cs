@@ -23,13 +23,12 @@ public class BreatheActivity : Activity
             Console.WriteLine($"Breathe out...");
             Timer(5);
             
-            duration--;
+            duration-=10;
         }
 
 
         DisplayEndMessage();
 
-        //put everything in a while loop so it doesn't end until set duration is up?
 
     }
 

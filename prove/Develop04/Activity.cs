@@ -14,7 +14,7 @@ public class Activity
         Console.WriteLine($"{_activityDescription}");
         // dispaly discription
         Console.Write("Please enter an amount of time in seconds to set the duration of the activity");
-        string _duration = Console.ReadLine();
+        _duration = int.Parse(Console.ReadLine());
         Console.WriteLine("");
         
         Console.Clear();
@@ -63,7 +63,7 @@ public class Activity
             foreach (string s in animationCharacters)
             {
                 Console.Write(s);
-                Thread.Sleep(1000);
+                Thread.Sleep(250);
                 Console.Write("\b \b");
             }
 
