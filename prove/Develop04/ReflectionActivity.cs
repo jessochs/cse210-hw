@@ -21,6 +21,12 @@ public class ReflectionActivity : Activity
         "What do you want others to learn from this experience?" 
     };
 
+    public ReflectionActivity()
+    {
+        _activityName = "Reflection Activity";
+        _activityDescription = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    }
+
     private Random rnd = new Random();
 
     public string GetPrompt()
@@ -36,7 +42,21 @@ public class ReflectionActivity : Activity
 
     public void DisplayReflectionActivity()
     {
-        
+        DisplayStartMessage();
+        Console.WriteLine("");
+        GetPrompt();
+        Console.WriteLine("Press enter to continue.");
+        int duration = _duration;
+
+        while (duration > 0)
+        {
+            GetQuestion();
+             Spinner();
+        }
+
+        Console.WriteLine("");
+        DisplayEndMessage();
+
     }
-    //rewatch video to get multiple things to show in the time
+    
 }

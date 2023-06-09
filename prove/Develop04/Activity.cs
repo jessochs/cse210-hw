@@ -2,73 +2,78 @@ using System;
 
 public class Activity
 {
-    protected string _startMessage = "";
-    protected string _endMessage = "";
-    protected string _activityDescription = "";
-    protected string _message1 = "";
-    protected string _message2 = "";
+    protected string _activityName;
+    protected string _activityDescription;
 
-    public string GetStartMessage()
-    {
-        return _startMessage;
-    }
-    public void SetStartMessage(string startMessage)
-    {
-        _startMessage = startMessage;
-    }
-    
-    public string GetEndMessage()
-    {
-        return _endMessage;
-    }
-    
-    public void SetEndMessage(string endMessage)
-    {
-        _endMessage = endMessage;
-    }
+    protected int _duration;
 
-    public string GetActivityDescription()
+    public void DisplayStartMessage()
     {
-        return _activityDescription;
-    }
-     public string GetMessageOne()
-    {
-        return _message1;
-    }
-    public void SetMessageOne(string message1)
-    {
-        _message1 = message1;
-    }
-
-    public string GetMessageTwo()
-    {
-        return _message2;
-    }
-    public void SetMessageTwo(string message2)
-    {
-        _message2 = message2;
-    }
-
-    public void SetActivityDescription(string activityDescription)
-    {
-        _activityDescription = activityDescription;
-    }
-
-    public void DisplayIntro()
-    {
-        Console.WriteLine($"{_startMessage}");
+        Console.WriteLine($"Welcome to the {_activityName}.");
+        Console.WriteLine("");
         Console.WriteLine($"{_activityDescription}");
-    }
-
-    public string DisplayEndMessage()
-    {
-        return $"{_endMessage}";
-    }
-
-    public void Time()
-    {
+        // dispaly discription
         Console.Write("Please enter an amount of time in seconds to set the duration of the activity");
-        string activityTime = Console.ReadLine();
+        string _duration = Console.ReadLine();
+        Console.WriteLine("");
+        
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        Spinner();
+        
+        // sauy get ready
+        // run timer
     }
+
+    public void DisplayEndMessage()
+    {
+        Console.WriteLine("Well done!");
+        Spinner();
+        // end message string "Congrats you completed {_duration} seconds of the activity"
+        Console.WriteLine($"Congrats you completed {_duration} seconds of the activity.");
+        Spinner();
+        // spinner
+    }
+
+    // Timer method with duration parameter
+    public void Timer(int duration)
+    {
+        for (int i = duration; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+    }
+
+    // Spinner Method
+    public void Spinner()
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(5);
+
+        while (DateTime.Now < endTime)
+        {
+            List<string> animationCharacters = new List<string>();
+            animationCharacters.Add("|");
+            animationCharacters.Add("/");
+            animationCharacters.Add("-");
+            animationCharacters.Add("\\");
+
+            foreach (string s in animationCharacters)
+            {
+                Console.Write(s);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+
+
+        }
+
+
+
+    }
+
     
+
 }

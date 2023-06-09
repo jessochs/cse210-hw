@@ -2,7 +2,7 @@ using System;
 
 public class ListingActivity : Activity
 {
-    // private string _encouragement = "";
+
     private List<string> _listPrompt = new List<string>
     {
         "Who are people that you appreciate?",
@@ -13,6 +13,12 @@ public class ListingActivity : Activity
 
     };
 
+    public ListingActivity()
+    {
+        _activityName = "Listing Activity";
+        _activityDescription = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+    }
+
     private Random rnd = new Random();
 
     public string GetQuestion()
@@ -22,13 +28,22 @@ public class ListingActivity : Activity
 
     public void DisplayListingActivity()
     {
-        for (int i = 5; i > 0; i--)
+        DisplayStartMessage();
+        GetQuestion();
+
+        //display count of listed items
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(5);
+
+        while (DateTime.Now < endTime)
         {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Console.WriteLine("You may begin in:");
+            Timer(5);
+
         }
-        
+
+        DisplayEndMessage();
 
 
     }
