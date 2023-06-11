@@ -30,7 +30,7 @@ public class Activity
         Console.WriteLine("Well done!");
         Spinner();
         // end message string "Congrats you completed {_duration} seconds of the activity"
-        Console.WriteLine($"Congrats you completed {_duration} seconds of the activity.");
+        Console.WriteLine($"Congrats you completed {_duration} seconds of the {_activityName}.");
         Spinner();
         // spinner
     }

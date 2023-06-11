@@ -5,7 +5,7 @@ public class BreatheActivity : Activity
 
     public BreatheActivity()
     {
-        _activityName = "Breathe";
+        _activityName = "Breathe Activity";
         _activityDescription = "This activity will take a few seconds to help you breathe.";
     }
 
