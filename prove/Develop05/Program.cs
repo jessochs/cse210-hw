@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         List<Goal> goals = new List<Goal>();
+        Manage manage = new Manage();
          // create manage object
         int totalPoints = 0;
 
@@ -63,10 +64,10 @@ class Program
                     }
                     break;
                 case "3":
-                //manage.save
+                    manage.Save();
                     break;
                 case "4":
-                //manage.load
+                    manage.Load();
                     break;
                 case "5":
                     counter = 1;

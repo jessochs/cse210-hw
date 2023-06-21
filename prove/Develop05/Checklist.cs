@@ -8,7 +8,7 @@ public class Checklist : Goal
     private int _bonusPoints;
 
     private int _timesCompleted;
-    public Checklist()
+    public Checklist(string goalName, string description, int pointsEarned, int numberToComplete, int bonusPoints) : base (goalName, description, pointsEarned)
     {
         Console.WriteLine("How many times will you need to complete this goal?");
         _numberToComplete = int.Parse(Console.ReadLine());

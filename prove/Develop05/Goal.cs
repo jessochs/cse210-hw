@@ -16,7 +16,7 @@ public abstract class Goal
     public bool IsCompleted {get{ return _isCompleted;}}
 
 
-    public Goal()
+    public Goal(string goalName, string description, int pointsEarned)
     {
         Console.WriteLine("What is the name of your goal?");
         _goalName = Console.ReadLine();
