@@ -13,6 +13,7 @@ class Program
         bool choice = false;
         while (!choice)
         {
+            Console.WriteLine(totalPoints);
             Console.WriteLine("Menu Options:");
             Console.WriteLine(" ");
             Console.WriteLine("1. Create new goal");
@@ -42,16 +43,16 @@ class Program
                     switch (goalNumber)
                     {
                         case "1":
-                            Simple simple = new Simple(goals);
-                            goals.Append(simple);
+                            Simple simple = new Simple();
+                            goals.Add(simple);
                             break;
                         case "2":
                             Eternal eternal = new Eternal();
-                            goals.Append(eternal);
+                            goals.Add(eternal);
                             break;
                         case "3":
                             Checklist checklist = new Checklist();
-                            goals.Append(checklist);
+                            goals.Add(checklist);
                             break;
                     }
                     break;
@@ -68,7 +69,7 @@ class Program
                     manage.Save(goals, totalPoints);
                     break;
                 case "4":
-                    manage.Load();
+                    goals = manage.Load(ref totalPoints);
                     break;
                 case "5":
                     counter = 1;

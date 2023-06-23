@@ -22,12 +22,13 @@ public class Manage
         // out("*print variable here seperated by a distinguised character like |*")
     }
 
-    public List<Goal> Load()
+    public List<Goal> Load(ref int totalPoints)
     {
         List<Goal> goals = new List<Goal>();
         Console.Write("What is the file name?");
         string filename = Console.ReadLine();
         string[] lines = File.ReadAllLines(filename);
+        totalPoints = int.Parse(lines[0]);
 
         foreach (string line in lines)
         {

@@ -6,6 +6,7 @@ public class Simple : Goal
     // constructor that passes parameters to the base class
     // simple(*paramters*) : base (*paramters*)
 
+    public Simple(){}
 
     public Simple(string goalName, string description, int pointsEarned, bool isCompleted) : base (goalName, description, pointsEarned, isCompleted)
     {

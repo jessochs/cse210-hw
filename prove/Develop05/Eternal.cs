@@ -2,6 +2,7 @@ using System;
 
 public class Eternal : Goal 
 {
+    public Eternal(){}
     public Eternal(string goalName, string description, int pointsEarned) : base (goalName, description, pointsEarned, false)
     {
     }

@@ -1,0 +1,2 @@
+1000
+Simple|read the scriptures|read the scriptures daily|50|False
