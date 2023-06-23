@@ -8,12 +8,19 @@ public class Checklist : Goal
     private int _bonusPoints;
 
     private int _timesCompleted;
-    public Checklist(string goalName, string description, int pointsEarned, int numberToComplete, int bonusPoints) : base (goalName, description, pointsEarned)
+    public Checklist()
     {
         Console.WriteLine("How many times will you need to complete this goal?");
         _numberToComplete = int.Parse(Console.ReadLine());
         Console.WriteLine("How many bonus points will you earn?");
         _bonusPoints = int.Parse(Console.ReadLine());
+    }
+
+    public Checklist(string goalName, string description, int pointsEarned, bool isCompleted, int numberToComplete, int bonusPoints) : base (goalName, description, pointsEarned, isCompleted)
+    {
+        
+        _numberToComplete = numberToComplete;
+        _bonusPoints = bonusPoints;
     }
 
    public override int RecordEvent()
@@ -33,5 +40,10 @@ public class Checklist : Goal
         pointsEarned = _pointsEarned * timesCompleted;
         Console.WriteLine("Congrats! You have earned {pointsEarned} points!");
         return pointsEarned;
+    }
+
+    public override string SaveFormat()
+    {
+        return $"{this.GetType()}|{_goalName}|{_description}|{_pointsEarned}|{_isCompleted}|{_numberToComplete}|{_bonusPoints}";
     }
 }

@@ -5,11 +5,10 @@ public class Simple : Goal
 
     // constructor that passes parameters to the base class
     // simple(*paramters*) : base (*paramters*)
-    public Simple(string goalName, string description, int pointsEarned) : base (goalName, description, pointsEarned)
+
+
+    public Simple(string goalName, string description, int pointsEarned, bool isCompleted) : base (goalName, description, pointsEarned, isCompleted)
     {
-        _goalName = goalName;
-        _description = description;
-        _pointsEarned = pointsEarned;
     }
 
     public override int RecordEvent()
@@ -19,5 +18,9 @@ public class Simple : Goal
         return _pointsEarned;
     }
 
+    public override string SaveFormat()
+    {
+        return $"{this.GetType()}|{_goalName}|{_description}|{_pointsEarned}|{_isCompleted}";
+    }
     
 }

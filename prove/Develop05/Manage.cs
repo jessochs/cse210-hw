@@ -2,18 +2,18 @@ using System;
 
 public class Manage
 { 
-    private List<Goal> goals2 = new List<Goal>();
 
-    public void Save()
+    public void Save(List<Goal> goals, int totalPoints)
     {
         Console.WriteLine("What file would you like it saved to?");
         string filename = Console.ReadLine();
 
         using (StreamWriter outputFile = new StreamWriter(filename, true))
         {
-            foreach (Goal g in goals2) 
+            outputFile.WriteLine(totalPoints);
+            foreach (Goal g in goals) 
             {
-                outputFile.WriteLine($"");
+                outputFile.WriteLine(g.SaveFormat());
             }
         }
         // same as Journal
@@ -22,22 +22,37 @@ public class Manage
         // out("*print variable here seperated by a distinguised character like |*")
     }
 
-    public void Load()
+    public List<Goal> Load()
     {
-        goals2.Clear();
+        List<Goal> goals = new List<Goal>();
         Console.Write("What is the file name?");
         string filename = Console.ReadLine();
-        string[] lines = System.IO.File.ReadAllLines(filename);
+        string[] lines = File.ReadAllLines(filename);
 
         foreach (string line in lines)
         {
-            string[] date = line.Split("|");
-
+            string[] data = line.Split("|");
+            switch (data[0])
+            {
+                case "Simple":
+                    Simple goal = new Simple(data[1], data[2], int.Parse(data[3]), bool.Parse(data[4]));
+                    goals.Add(goal);
+                    break;
+                case "Eternal":
+                    Eternal eternal = new Eternal(data[1], data[2], int.Parse(data[3]));
+                    goals.Add(eternal);
+                    break;
+                case "Checklist":
+                    Checklist checklist = new Checklist(data[1], data[2], int.Parse(data[3]), bool.Parse(data[4]), int.Parse(data[5]), int.Parse(data[6]));
+                    goals.Add(checklist);
+                    break;
+            }
             //Goal goal = new Goal(data[0], data[1], data[2]);
             //goals2.Add();
 
         }
         // same concept as Journal
         // itilize the File.ReadAllLines and the Split("|")
+        return goals;
     }
 }

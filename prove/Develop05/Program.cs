@@ -6,7 +6,8 @@ class Program
     {
         List<Goal> goals = new List<Goal>();
         Manage manage = new Manage();
-         // create manage object
+    
+        // create manage object
         int totalPoints = 0;
 
         bool choice = false;
@@ -41,7 +42,7 @@ class Program
                     switch (goalNumber)
                     {
                         case "1":
-                            Simple simple = new Simple();
+                            Simple simple = new Simple(goals);
                             goals.Append(simple);
                             break;
                         case "2":
@@ -64,7 +65,7 @@ class Program
                     }
                     break;
                 case "3":
-                    manage.Save();
+                    manage.Save(goals, totalPoints);
                     break;
                 case "4":
                     manage.Load();
@@ -75,7 +76,7 @@ class Program
                     List<int> indexes = new List<int>();
                     // 0    1   2   3   ...
                     // 2    4   7   8 ....
-                    for(int i = 0; i < goals.Count; i++)
+                    for (int i = 0; i < goals.Count; i++)
                     {
                         if (!goals[i].IsCompleted)
                         {
@@ -101,8 +102,5 @@ class Program
     }
 
 
-    static void DisplayList()
-    {
 
-    }
 }
