@@ -15,7 +15,7 @@ public class Simple : Goal
     public override int RecordEvent()
     {
         _isCompleted = true;
-        Console.WriteLine("Congrats! You have earned {_pointsEarned} points!");
+        Console.WriteLine($"Congrats! You have earned {_pointsEarned} points!");
         return _pointsEarned;
     }
 

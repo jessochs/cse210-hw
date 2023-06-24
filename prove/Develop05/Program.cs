@@ -9,7 +9,6 @@ class Program
     
         // create manage object
         int totalPoints = 0;
-
         bool choice = false;
         while (!choice)
         {
@@ -82,7 +81,7 @@ class Program
                         if (!goals[i].IsCompleted)
                         {
                             Console.WriteLine($"{counter}. {goals[i].GoalName}. {goals[i].Description}");
-                            indexes.Append(i);
+                            indexes.Add(i);
                             counter++;
                         }
                     }

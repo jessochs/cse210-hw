@@ -21,7 +21,7 @@ public abstract class Goal
         Console.WriteLine("What is the name of your goal?");
         _goalName = Console.ReadLine();
 
-        Console.WriteLine("What is a short description og your goal?");
+        Console.WriteLine("What is a short description of your goal?");
         _description = Console.ReadLine();
 
         Console.WriteLine("how many points will you get for completing this goal?");

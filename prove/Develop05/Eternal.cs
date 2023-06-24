@@ -8,7 +8,7 @@ public class Eternal : Goal
     }
    public override int RecordEvent()
     { 
-        Console.WriteLine("Congrats! You have earned {_pointsEarned} points!");
+        Console.WriteLine($"Congrats! You have earned {_pointsEarned} points!");
         return _pointsEarned;
     }
 

@@ -38,7 +38,7 @@ public class Checklist : Goal
         }
         
         pointsEarned = _pointsEarned * timesCompleted;
-        Console.WriteLine("Congrats! You have earned {pointsEarned} points!");
+        Console.WriteLine($"Congrats! You have earned {pointsEarned} points!");
         return pointsEarned;
     }
 
