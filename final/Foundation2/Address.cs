@@ -10,7 +10,7 @@ public class Address
 
     public Address(){}
 
-    public Address(string street, string city, string zipcode, string state, string country)
+    public Address(string street, string city, string state, string country, string zipcode)
     {
         _street = street;
         _city = city;
@@ -20,24 +20,21 @@ public class Address
 
     }
 
-    public string ComputeCountry()
+    public bool ComputeCountry()
     {
-        string shippingCountry;
 
         if (_country == "USA")
         {
-           shippingCountry = "USA";
+           return true;
         }
         else
         {
-            shippingCountry ="Other";
+            return false;
         }
-
-        return shippingCountry;
     }
 
     public void DisplayAddress()
     {
-        Console.WriteLine($"{_street}{Environment.NewLine}{_city}, {_state} {_zipcode}{Environment.NewLine}{_country}");
+        Console.WriteLine($"{_street}\n {_city}, {_state} {_zipcode}\n{_country}");
     }
 }

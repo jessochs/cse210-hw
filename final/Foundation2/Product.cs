@@ -2,11 +2,16 @@ using System;
 
 public class Product 
 {
-    protected string _productName;
-    protected string _productId;
+    private string _productName;
+    private string _productId;
     private float _price;
     private int _quantity;
-    public Product(){}
+    private Product(){}
+
+    public float Price{get{return _price;}}
+    public string ProductName{get{return _productName;}}
+    public string ProductId{get{return _productId;}}
+    public int Quantity{get{return _quantity;}}
 
     public Product(string productName, string productId, float price, int quantity)
     {
@@ -14,6 +19,15 @@ public class Product
         _productId = productId;
         _price = price;
         _quantity = quantity;
+    }
+
+    public void AddProduct()
+    {
+        Console.WriteLine(_productName);
+        Console.WriteLine(_productId);
+        Console.WriteLine(_price);
+        Console.WriteLine(_quantity);
+
     }
 
     public float ComputePrice()

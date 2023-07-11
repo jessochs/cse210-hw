@@ -2,39 +2,49 @@ using System;
 
 public class Order
 {
-    List<Product> products = new List<Product>();
+    private List<Product> _products = new List<Product>();
 
-    Customer customer1 = new Customer();
-    Product product1 = new Product();
-    private int shipping;
+    private Customer customer1 = new Customer();
 
-    public int ShippingCost()
+    public void AddProduct(Product product)
     {
-        
-        
+        _products.Add(product);
+    }
 
-        if  (customer1.CustomerCountry == "USA")
+    public Order(Customer customer)
+    {
+        customer1 = customer;
+    }
+
+    private float ShippingCost()
+    {
+        if  (customer1.Address.ComputeCountry())
         {
-            shipping = 5;
+            return 5.0f;
         }
         else{
-            shipping = 35;
+            return 35.0f;
         }
-
-        return shipping;
     }
     
 
-    public void Total()
+    public float Total()
     {
-        int totalPrice = (price+=) + shipping;
+        float totalPrice = 0;
+
+        foreach(Product p in _products)
+        {
+            totalPrice+= p.Price * p.Quantity;
+        }
+        totalPrice += ShippingCost();
+        return totalPrice;
     }
     
     public void PackingLabel()
     {
-        foreach(Product p in products)
+        foreach(Product p in _products)
         {
-            Console.WriteLine($"{productName}: {productId}");
+            Console.WriteLine($"{p.ProductName}: {p.ProductId}");
         }
     }
     
