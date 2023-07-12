@@ -3,6 +3,7 @@ using System;
 public class Reception : Event
 {
     private string _email = "mollyweasley@hogsmeade.com";
+    private EventAddress address2 = new EventAddress("Third house by the field", "The Burrow", "Chester", "00004");
 
     public Reception()
     {
@@ -16,6 +17,8 @@ public class Reception : Event
     public void StandardReception()
     {
         DisplayStandard();
+        Console.WriteLine();
+        address2.Display();
     }
 
     public void FullReception()
@@ -23,12 +26,15 @@ public class Reception : Event
         DisplayFull();
         Console.WriteLine();
         Console.WriteLine($"Please RSVP at {_email} or via owl");
+        Console.WriteLine();
+        address2.Display();
 
     }
 
     public void ShortReception()
     {
         DisplayShort();
+        
     }
 
 }

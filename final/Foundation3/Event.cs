@@ -12,6 +12,9 @@ public class Event
 
     public void DisplayStandard()
     {
+        Console.WriteLine("Standard Event:");
+        Console.WriteLine();
+        
         Console.WriteLine($"You have been invited to {_title}.");
         Console.WriteLine($"{_description}");
         Console.WriteLine();
@@ -22,6 +25,8 @@ public class Event
 
     public void DisplayFull()
     {   
+        Console.WriteLine("Full Details Event:");
+        Console.WriteLine();
         Console.WriteLine($"Type of event: {_type}");
         Console.WriteLine($"You have been invited to {_title}.");
         Console.WriteLine($"{_description}");
@@ -32,6 +37,8 @@ public class Event
 
     public void DisplayShort()
     {
+        Console.WriteLine("Short Event:");
+        Console.WriteLine();
         Console.WriteLine($"You have been invited to {_type} {_title}.");
         Console.WriteLine();
         Console.WriteLine($"Date: {_date}");
