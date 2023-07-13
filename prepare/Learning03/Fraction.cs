@@ -40,9 +40,9 @@ public class Fraction {
             {
                 return _bottom;
             }
-            public string GetFractionString(){
-                string wholeFraction = $"{_top}/{_bottom}";
-            }
+            // public string GetFractionString(){
+            //     string wholeFraction = $"{_top}/{_bottom}";
+            // }
             public double GetDecimalValue(){
 
                 return (double)_top / (double)_bottom;

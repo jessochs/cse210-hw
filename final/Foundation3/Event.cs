@@ -6,7 +6,7 @@ public class Event
     protected string _description;
     protected string _date;
     protected string _time;
-    protected string address; //but this will be a class?
+    
     protected string _type;
 
 

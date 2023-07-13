@@ -4,6 +4,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        List<Activity> activities = new List<Activity>();
+
+        Running running = new Running();
+        activities.Add(running);
+        Cycling cycling = new Cycling();
+        activities.Add(cycling);
+        // Swimming swimming = new Swimming();
+        // activities.Add(swimming);
+
+        foreach(Activity a in activities)
+        {
+            a.GetFormat();
+        }
+
+
+
+
     }
 }
