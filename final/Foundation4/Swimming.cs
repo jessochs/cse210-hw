@@ -2,7 +2,7 @@ using System;
 
 public class Swimming : Activity
 {
-    private int _laps = 12;
+    private float _laps = 12f;
 
     public Swimming()
     {
@@ -13,19 +13,19 @@ public class Swimming : Activity
     
     }
 
-    public override int Distance()
+    public override float Distance()
     {
-        _distance = 10;
-        // _laps * 50 / 1000 * 0.62;
+        _distance = _laps * 50 / 1000 * 0.62f;
+        // 
         return _distance;
     }
 
-    public override int Speed()
+    public override float Speed()
     {
         return _speed;
     }
 
-    public override int Pace()
+    public override float Pace()
     {
         _pace = 60 / _speed;
         return _pace;

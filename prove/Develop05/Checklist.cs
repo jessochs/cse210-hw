@@ -44,6 +44,7 @@ public class Checklist : Goal
 
     public override string SaveFormat()
     {
+        
         return $"{this.GetType()}|{_goalName}|{_description}|{_pointsEarned}|{_isCompleted}|{_numberToComplete}|{_bonusPoints}";
     }
 }

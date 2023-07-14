@@ -8,21 +8,21 @@ public class Cycling : Activity
         _date = "02 August 2022";
         _time = 60;
         _activity = "Cycling";
-        _distance = 14;
+        _distance = 14f;
     }
 
-    public override int Distance()
+    public override float Distance()
     {
         return _distance;
     }
 
-    public override int Speed()
+    public override float Speed()
     {
         _speed = (_distance / _time) * 60;
         return _speed;
     }
 
-    public override int Pace()
+    public override float Pace()
     {
         _pace = _time / _distance;
         return _pace;

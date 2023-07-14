@@ -10,8 +10,8 @@ class Program
         activities.Add(running);
         Cycling cycling = new Cycling();
         activities.Add(cycling);
-        // Swimming swimming = new Swimming();
-        // activities.Add(swimming);
+        Swimming swimming = new Swimming();
+        activities.Add(swimming);
 
         foreach(Activity a in activities)
         {
