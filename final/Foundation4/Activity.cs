@@ -15,11 +15,11 @@ public abstract class Activity
     }
     
 
-    public abstract float Distance();
+    public abstract double Distance();
 
     public abstract float Speed();
 
-    public abstract float Pace();
+    public abstract double Pace();
 
 
 

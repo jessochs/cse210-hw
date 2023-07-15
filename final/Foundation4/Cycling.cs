@@ -11,7 +11,7 @@ public class Cycling : Activity
         _distance = 14f;
     }
 
-    public override float Distance()
+    public override double Distance()
     {
         return _distance;
     }
@@ -22,9 +22,9 @@ public class Cycling : Activity
         return _speed;
     }
 
-    public override float Pace()
+    public override double Pace()
     {
         _pace = _time / _distance;
-        return _pace;
+        return Math.Round(_pace, 2);
     }
 }

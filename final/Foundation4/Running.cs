@@ -8,11 +8,11 @@ public class Running : Activity
     {
         _date = "12 July 2023";
         _activity = "Running";
-        _speed = 5;
+        _speed = 5.0f;
         _time = 30;
     }
 
-    public override float Distance()
+    public override double Distance()
     {
         _distance = _speed * (_time / 60);
 
@@ -23,7 +23,7 @@ public class Running : Activity
     {
         return _speed;
     }
-    public override float Pace()
+    public override double Pace()
     {
         _pace = 60 / _speed;
         return _pace;

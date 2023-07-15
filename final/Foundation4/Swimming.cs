@@ -13,11 +13,11 @@ public class Swimming : Activity
     
     }
 
-    public override float Distance()
+    public override double Distance()
     {
         _distance = _laps * 50 / 1000 * 0.62f;
         // 
-        return _distance;
+        return Math.Round(_distance, 2);
     }
 
     public override float Speed()
@@ -25,7 +25,7 @@ public class Swimming : Activity
         return _speed;
     }
 
-    public override float Pace()
+    public override double Pace()
     {
         _pace = 60 / _speed;
         return _pace;
